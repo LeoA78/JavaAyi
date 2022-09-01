@@ -1,24 +1,30 @@
 package org.example.app.controller;
 
-import org.example.app.service.IService;
+import org.example.app.dto.request.EmpleadoDTO;
+import org.example.app.dto.response.EmpleadoResponseDTO;
+import org.example.app.entity.Empleado;
+import org.example.app.service.IEmpleadoService;
 import org.example.app.service.impl.EmpleadoServiceImpl;
 
-public class EmpleadoController {
-    IService iServicios = new EmpleadoServiceImpl();
+import java.util.List;
 
-    public void agregarEmpleado(String nombre, String apellido){
-        iServicios.insertar(nombre,apellido);
+public class EmpleadoController {
+    IEmpleadoService iEmpleadoServicios = new EmpleadoServiceImpl();
+
+    public void agregarEmpleado(Empleado empleado){
+        iEmpleadoServicios.insertarEmpleado(empleado);
     }
 
     public void borrarEmpleado(Integer id){
-        iServicios.borrar(id);
+        iEmpleadoServicios.borrarEmpleado(id);
     }
 
-    public String listarEmpleados(){
-        return iServicios.listarTodos();
+    public List<Empleado> listarEmpleados(){
+        return iEmpleadoServicios.listarEmpleados();
     }
 
-    public String modificarEmpleado(String nombre, String apellido){
-        return iServicios.modificar(nombre,apellido);
+    public EmpleadoResponseDTO modificarEmpleado(EmpleadoDTO empleado, Integer id){
+        return iEmpleadoServicios.actualizarEmpleado(empleado,id);
     }
+
 }

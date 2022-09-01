@@ -7,7 +7,7 @@ import lombok.*;
 @Data
 @Getter
 @Setter
-public class Cliente {
+public class Cliente extends Persona{
     private Integer idCliente;
     private String vip;
 }

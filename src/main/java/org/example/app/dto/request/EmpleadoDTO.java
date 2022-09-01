@@ -1,4 +1,12 @@
 package org.example.app.dto.request;
 
-public class EmpleadoDTO {
+import lombok.*;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class EmpleadoDTO extends PersonaDTO{
+    private String legajo;
+    private String cargo;
 }

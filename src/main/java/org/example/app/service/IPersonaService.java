@@ -11,4 +11,6 @@ public interface IPersonaService {
     void borrarPersona(Integer id);
     List<Persona> listarPersonas();
     PersonaResponseDTO actualizarPersona(PersonaDTO persona, Integer id);
+
+    List<Persona> getAllPersonas();
 }

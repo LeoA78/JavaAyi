@@ -1,30 +1,56 @@
 package org.example.app.service.impl;
 
+import org.example.app.configuration.ConexionDB;
 import org.example.app.dto.request.PersonaDTO;
 import org.example.app.dto.response.PersonaResponseDTO;
 import org.example.app.entity.Persona;
 import org.example.app.mapper.PersonaMapperImpl;
 import org.example.app.service.IPersonaService;
-import org.example.app.service.IService;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.app.constants.Constants.*;
+
 public class PersonaServiceImpl implements IPersonaService {
      private PersonaMapperImpl personaMapperImplement = new PersonaMapperImpl();
+     private ConexionDB conexionDB;
 
     @Override
     public void insertarPersona(Persona persona) {
-        Persona persona1 = new Persona();
-        persona1 = persona;
+        conexionDB = new ConexionDB();
+        Connection conn = null;
+        PreparedStatement stmt = null;
 
-        System.out.println("Se inserta a " + persona1.toString());
+        try {
+            conn = conexionDB.getConnection();
+            stmt = conn.prepareStatement(SQL_INSERT_PERSON);
+            stmt.setString(1,persona.getNombre());
+            stmt.setString(2,persona.getApellido());
+            stmt.setInt(3,persona.getEdad());
+            stmt.setString(4,persona.getDireccion());
+            Integer respuesta =  stmt.executeUpdate();
+
+            System.out.println("Respueta: " + respuesta);
+
+           if(respuesta == 1){
+                System.out.println("La persona fue ingresada correctamente");
+           }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try {
+                conexionDB.close(stmt);
+                conexionDB.close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+
     }
 
-    @Override
-    public void borrarPersona(Integer id) {
-        System.out.println("Se borró una Persona id: " + id);
-    }
 
     @Override
     public List<Persona> listarPersonas() {
@@ -55,14 +81,120 @@ public class PersonaServiceImpl implements IPersonaService {
     } */
 
     public PersonaResponseDTO actualizarPersona(PersonaDTO personaDTO, Integer id) {
-        Persona personaModificada = new Persona();
+
+        conexionDB = new ConexionDB();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = conexionDB.getConnection();
+            stmt = conn.prepareStatement(SQL_UPDATE_PERSON);
+            stmt.setString(1,personaDTO.getNombre());
+            stmt.setString(2,personaDTO.getApellido());
+            stmt.setInt(3,personaDTO.getEdad());
+            stmt.setString(4,personaDTO.getDireccion());
+            stmt.setInt(5,personaDTO.getId());
+            Integer respuesta =  stmt.executeUpdate();
+
+            System.out.println("Respueta: " + respuesta);
+
+            if(respuesta == 1){
+                System.out.println("La persona fue ingresada correctamente");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try {
+                conexionDB.close(stmt);
+                conexionDB.close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+
+        return null;
+       /* Persona personaModificada = new Persona();
 
         personaModificada.setNombre(personaDTO.getNombre());
         personaModificada.setApellido(personaDTO.getApellido());
 
-        return personaMapperImplement.toEntityToDto(personaModificada);
+
+        return personaMapperImplement.toEntityToDto(personaModificada); */
+    }
+
+    @Override
+    public List<Persona> getAllPersonas() {
+        conexionDB = new ConexionDB();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Persona persona = null;
+        List<Persona> personas = new ArrayList<>();
+
+        try {
+            conn = conexionDB.getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT_PERSON);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                int idPersona = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+                Integer edad = rs.getInt("edad");
+                String direccion = rs.getString("direccion");
+
+                persona = new Persona(idPersona, nombre, apellido, direccion,edad);
+
+                personas.add(persona);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try {
+                conexionDB.close(rs);
+                conexionDB.close(stmt);
+                conexionDB.close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+
+        return personas;
+    }
+
+    @Override
+    public void borrarPersona(Integer id) {
+        conexionDB = new ConexionDB();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = conexionDB.getConnection();
+            stmt = conn.prepareStatement(SQL_DELETE_PERSON);
+            stmt.setInt(1,id);
+            Integer respuesta =  stmt.executeUpdate();
+
+            if(respuesta < 1){
+                System.out.println("El id: " + id + " no existe.");
+            }else{
+                System.out.println("La persona con el id: " + id + " fue eliminada correctamente");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try {
+                conexionDB.close(stmt);
+                conexionDB.close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
 
     }
+
 
 /*
     @Override
@@ -70,10 +202,6 @@ public class PersonaServiceImpl implements IPersonaService {
         System.out.println("Se insertó una Persona");
     }
 
-    @Override
-    public void borrar(Integer id) {
-        System.out.println("Se borró una persona");
-    }
 
     @Override
     public String modificar(String nombre, String apellido) {

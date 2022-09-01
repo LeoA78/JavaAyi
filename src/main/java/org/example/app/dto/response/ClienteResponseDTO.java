@@ -1,4 +1,14 @@
 package org.example.app.dto.response;
 
-public class ClienteResponseDTO {
+import lombok.*;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Getter
+@Setter
+public class ClienteResponseDTO{
+    private Integer idCliente;
+    private String vip;
+    private PersonaResponseDTO personaResponseDTO;
 }

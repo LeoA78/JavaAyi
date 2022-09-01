@@ -1,21 +1,29 @@
 package org.example;
 
 import org.example.app.controller.*;
+import org.example.app.dto.request.ClienteDTO;
 import org.example.app.dto.request.PersonaDTO;
+import org.example.app.dto.response.ClienteResponseDTO;
 import org.example.app.dto.response.PersonaResponseDTO;
 import org.example.app.entity.Empleado;
 import org.example.app.entity.Persona;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DispatcherApp {
     public static void main(String[] args) {
-
+/*
         PersonaController personaController = new PersonaController();
         EmpleadoController empleadoController = new EmpleadoController();
         ClienteController clienteController = new ClienteController();
 
-        Persona persona = new Persona("Carlos","Perez","12345657");
+        Persona persona = new Persona();
         PersonaDTO personaDTO = new PersonaDTO("Carlos","Perez","12345657");
         PersonaResponseDTO personaResponseDTO;
+
+        ClienteDTO clienteDTO = new ClienteDTO(2,"VIP");
+        ClienteResponseDTO clienteResponseDTO = clienteController.modificarCliente(clienteDTO,2);
 
         String nombre = "Carlos";
         String apellido = "Perez";
@@ -29,28 +37,29 @@ public class DispatcherApp {
         String apellido2 = "Ruiz";
         Integer id2 = 11;
 
-        System.out.println("Lista de personas -> " + personaController.listarPersonas());
-        
+
+
         personaResponseDTO = personaController.modificarPersona(personaDTO,id);
         System.out.println(personaResponseDTO);
 
         personaController.agregarPersona(persona);
         personaController.borrarPersona(id);
 
-        System.out.println("---------------");
 
-        System.out.println(empleadoController.listarEmpleados());
-        System.out.println(empleadoController.modificarEmpleado(nombre1,apellido1));
-        empleadoController.agregarEmpleado(nombre1,apellido1);
-        empleadoController.borrarEmpleado(id1);
 
         System.out.println("---------------");
+        */
+        PersonaController personaController = new PersonaController();
+        List<Persona> personas = new ArrayList<>();
+        personas = personaController.listarPersonas();
 
-        System.out.println(clienteController.listarClientes());
-        System.out.println(clienteController.modificarCliente(nombre2,apellido2));
-        clienteController.agregarCliente(nombre2,apellido2);
-        clienteController.borrarCliente(id2);
+        personas.forEach(persona -> {
+            System.out.println("persona = " + persona);
+        });
 
         System.out.println("---------------");
+
+        Persona persona = new Persona("Carlos","Arturo","Av Belgrano",41);
+        personaController.agregarPersona(persona);
     }
 }

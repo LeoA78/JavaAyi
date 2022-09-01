@@ -1,24 +1,30 @@
 package org.example.app.controller;
 
-import org.example.app.service.IService;
+import org.example.app.dto.request.ClienteDTO;
+import org.example.app.dto.response.ClienteResponseDTO;
+import org.example.app.entity.Cliente;
+import org.example.app.service.IClienteService;
 import org.example.app.service.impl.ClienteServiceImpl;
 
-public class ClienteController {
-    IService iServicios = new ClienteServiceImpl();
+import java.util.List;
 
-    public void agregarCliente(String nombre, String apellido){
-        iServicios.insertar(nombre,apellido);
+public class ClienteController {
+    IClienteService iClienteServicios = new ClienteServiceImpl();
+
+    public void agregarCliente(Cliente cliente){
+        iClienteServicios.insertarCliente(cliente);
     }
 
     public void borrarCliente(Integer id){
-        iServicios.borrar(id);
+        iClienteServicios.borrarCliente(id);
     }
 
-    public String listarClientes(){
-        return iServicios.listarTodos();
+    public List<Cliente> listarClientes(){
+        return iClienteServicios.listarClientes();
     }
 
-    public String modificarCliente(String nombre, String apellido){
-        return iServicios.modificar(nombre,apellido);
+    public ClienteResponseDTO modificarCliente(ClienteDTO cliente, Integer id){
+        return iClienteServicios.actualizarCliente(cliente,id);
     }
+
 }
