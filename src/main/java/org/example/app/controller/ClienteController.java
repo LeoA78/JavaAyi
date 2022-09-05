@@ -23,7 +23,7 @@ public class ClienteController {
         return iClienteServicios.listarClientes();
     }
 
-    public ClienteResponseDTO modificarCliente(ClienteDTO cliente, Integer id){
+    public Cliente modificarCliente(Cliente cliente, Integer id){
         return iClienteServicios.actualizarCliente(cliente,id);
     }
 

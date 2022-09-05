@@ -5,28 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4107e8f0-7c0b-4c09-87ff-f036067d6284" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/app/configuration/ConexionDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/app/constants/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/app/utils/Utiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DispatcherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DispatcherApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/controller/EmpleadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/controller/EmpleadoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/controller/PersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/controller/PersonaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/dto/request/ClienteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/dto/request/ClienteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/dto/request/EmpleadoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/dto/request/EmpleadoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/dto/request/PersonaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/dto/request/PersonaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/dto/response/ClienteResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/dto/response/ClienteResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/dto/response/EmpleadoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/dto/response/EmpleadoResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/entity/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/entity/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/entity/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/entity/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/entity/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/mapper/ClienteMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/mapper/ClienteMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/mapper/EmpleadoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/mapper/EmpleadoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/service/IClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/service/IClienteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/service/IEmpleadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/service/IEmpleadoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/service/IPersonaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/service/IPersonaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/service/IService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/service/impl/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/service/impl/ClienteServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/service/impl/EmpleadoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/service/impl/EmpleadoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/app/service/impl/PersonaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/app/service/impl/PersonaServiceImpl.java" afterDir="false" />
@@ -58,15 +46,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/leonel/Documents/Java/Tarea-1/Tarea/src/main/java/org/example/app/dto/response&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/leonel/Documents/Java/Tarea-1/Tarea",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/org/example/app/dto/response" />

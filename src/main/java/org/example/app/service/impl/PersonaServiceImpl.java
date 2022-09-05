@@ -69,16 +69,7 @@ public class PersonaServiceImpl implements IPersonaService {
         return lista;
     }
 
-   /* @Override
-    public Persona actualizarPersona(Persona persona, Integer id) {
-        Persona personaModificada = new Persona();
 
-        personaModificada.setNombre(persona.getNombre());
-        personaModificada.setApellido(persona.getApellido());
-
-
-        return personaModificada;
-    } */
 
     public PersonaResponseDTO actualizarPersona(PersonaDTO personaDTO, Integer id) {
 
@@ -93,7 +84,7 @@ public class PersonaServiceImpl implements IPersonaService {
             stmt.setString(2,personaDTO.getApellido());
             stmt.setInt(3,personaDTO.getEdad());
             stmt.setString(4,personaDTO.getDireccion());
-            stmt.setInt(5,personaDTO.getId());
+            stmt.setInt(5,id);
             Integer respuesta =  stmt.executeUpdate();
 
             System.out.println("Respueta: " + respuesta);
@@ -196,22 +187,5 @@ public class PersonaServiceImpl implements IPersonaService {
     }
 
 
-/*
-    @Override
-    public void insertar(String nombre, String apellido) {
-        System.out.println("Se insertó una Persona");
-    }
-
-
-    @Override
-    public String modificar(String nombre, String apellido) {
-        return "Se modificó la Persona " + nombre + " " + apellido;
-    }
-
-    @Override
-    public String listarTodos() {
-        return "Mostrando todas las personas";
-    }
-    */
 
 }

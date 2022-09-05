@@ -23,7 +23,7 @@ public class EmpleadoController {
         return iEmpleadoServicios.listarEmpleados();
     }
 
-    public EmpleadoResponseDTO modificarEmpleado(EmpleadoDTO empleado, Integer id){
+    public EmpleadoResponseDTO modificarEmpleado(Empleado empleado, Integer id){
         return iEmpleadoServicios.actualizarEmpleado(empleado,id);
     }
 

@@ -7,7 +7,18 @@ import lombok.*;
 @Data
 @Getter
 @Setter
-public class Cliente extends Persona{
+public class Cliente{
     private Integer idCliente;
-    private String vip;
+    private Boolean vip;
+    private Double deuda;
+    private Integer idPersonaCliente;
+
+    public Cliente(Boolean vip, Double deuda, Integer idPersonaCliente) {
+        this.vip = vip;
+        this.deuda = deuda;
+        this.idPersonaCliente = idPersonaCliente;
+    }
+
 }
+
+
