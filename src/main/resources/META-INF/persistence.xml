@@ -2,7 +2,7 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="cursoAyiJPA" transaction-type="RESOURCE_LOCAL"> <!--Esto es por la base de datos local. Para servidores va JTA-->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>org.curso.app.entity.Cliente</class>
+        <class>org.curso.app.entity.Cliente</class> <!-- Agregar por cada entidad creada -->
         <exclude-unlisted-classes>true</exclude-unlisted-classes> <!--Obliga a colocar la clase en este archivo.-->
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/curso_ayi_jpadb?serverTimezone=America/Santiago"/>
@@ -10,6 +10,7 @@
             <property name="jakarta.persistence.jdbc.password" value=""/>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <!-- <property name="hibernate.hbm2ddl.auto" value="update"/>  Para crear automaticamente -->
             <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>

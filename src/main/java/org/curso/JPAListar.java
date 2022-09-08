@@ -13,7 +13,7 @@ public class JPAListar {
 
         List<Cliente> clientes = entityManager.createQuery("select c from Cliente c", Cliente.class).getResultList();
 
-        clientes.forEach(System.out::println); //Forma de mostrar la lista lambda / programacion funcional
+        clientes.forEach(System.out::println); //Programación funcional
         entityManager.close();
     }
 }
