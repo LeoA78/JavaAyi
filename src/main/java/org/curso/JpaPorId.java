@@ -1,15 +1,15 @@
 package org.curso;
 
 import jakarta.persistence.EntityManager;
-import org.curso.app.configuration.JPAUtilDB;
+import org.curso.app.configuration.JpaUtilDB;
 import org.curso.app.entity.Cliente;
 
 import java.util.Scanner;
 
-public class JPAPorId {
+public class JpaPorId {
     public static void main(String[] args) {
 
-        EntityManager em = JPAUtilDB.getEntityManager();
+        EntityManager em = JpaUtilDB.getEntityManager();
 
         Scanner s = new Scanner(System.in);
 

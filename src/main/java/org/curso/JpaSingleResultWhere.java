@@ -2,17 +2,17 @@ package org.curso;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-import org.curso.app.configuration.JPAUtilDB;
+import org.curso.app.configuration.JpaUtilDB;
 import org.curso.app.entity.Cliente;
 
 import java.util.Scanner;
 
-public class JPASingleResultWhere {
+public class JpaSingleResultWhere {
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
 
-        EntityManager em = JPAUtilDB.getEntityManager();
+        EntityManager em = JpaUtilDB.getEntityManager();
 
         Query query = em.createQuery("select c from Cliente c where c.formaPago=?1", Cliente.class);
 

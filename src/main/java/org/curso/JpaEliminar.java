@@ -1,17 +1,15 @@
 package org.curso;
 
 import jakarta.persistence.EntityManager;
-import org.curso.app.configuration.JPAUtilDB;
+import org.curso.app.configuration.JpaUtilDB;
 import org.curso.app.entity.Cliente;
 
-import javax.swing.*;
-import java.time.LocalDate;
 import java.util.Scanner;
 
-public class JPAEliminar {
+public class JpaEliminar {
     public static void main(String[] args) {
 
-        EntityManager entityManager = JPAUtilDB.getEntityManager();
+        EntityManager entityManager = JpaUtilDB.getEntityManager();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el id del cliente a eliminar");

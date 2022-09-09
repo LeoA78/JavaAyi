@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7571ab05-ff90-4160-aa9b-4ec42441ae54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/JPACrear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/JPAEditar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/JPAEliminar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/JPAPorId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/JPASingleResultWhere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/JpaCrud.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/app/repositories/IClienteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/app/repositories/impl/ClienteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/app/services/IClienteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/curso/app/services/impl/ClienteServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/JPAListar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/JPAListar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/JPACrear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/JpaCrear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/JPAEditar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/JpaEditar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/JPAEliminar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/JpaEliminar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/JPAListar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/JpaListar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/JPAPorId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/JpaPorId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/JPASingleResultWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/JpaSingleResultWhere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/curso/app/configuration/JPAUtilDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/curso/app/configuration/JpaUtilDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -65,6 +71,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.curso.app.repositories" />
+      <recent name="org.curso.app.services" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
